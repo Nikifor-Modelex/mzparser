@@ -11,6 +11,9 @@ class typeBaseClass{
     
 }
 
+
+
+
 class BYTE extends typeBaseClass{
     constructor(){super()}
     static length=1

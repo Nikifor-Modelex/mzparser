@@ -1,9 +1,13 @@
+const Struct=require('../bsto/struct')
+
 const{
     WORD,
     DWORD
 } = require('../bsto/types')
 
-module.exports={
+
+
+module.exports=Struct.Create({
     e_magic:WORD,
     e_cblp:WORD,
     e_cp:WORD,
@@ -24,4 +28,4 @@ module.exports={
     e_res2:[10,WORD],
     e_lfanew:DWORD
 
-}
+})
