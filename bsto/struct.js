@@ -1,5 +1,9 @@
 class Struct{
-    
+    /**
+     * 
+     * @param {*} fields 
+     * @returns Class
+     */
     static Create(fields){
         var length=0
         for (var field in fields)
