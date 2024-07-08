@@ -8,7 +8,9 @@ class Struct{
     static Create(fields){
         var length=0
         for (var field in fields)
-            length+=fields[field].length
+            length+= fields[field] instanceof Array ? 
+            fields[field][1].length * fields[field][0] //data type size x array size
+            : fields[field].length
         
         class CustomStructure extends Struct{
             constructor(arg1){
