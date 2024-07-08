@@ -6,8 +6,7 @@ const{
 } = require('../bsto/types')
 
 
-
-module.exports=Struct.Create({
+const DOSHeader=Struct.Create({
     e_magic:WORD,
     e_cblp:WORD,
     e_cp:WORD,
@@ -26,6 +25,8 @@ module.exports=Struct.Create({
     e_oemid:WORD,
     e_oeminfo:WORD,
     e_res2:[10,WORD],
-    e_lfanew:DWORD
+    e_lfanew:DWORD.LE
 
 })
+
+module.exports=DOSHeader

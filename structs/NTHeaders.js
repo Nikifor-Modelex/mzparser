@@ -1,14 +1,15 @@
 const Struct=require('../bsto/struct')
 
 const{
-    DWORD
+    DWORD,
+    WORD
 } = require('../bsto/types')
 
 const ImageFileHeader =require('./ImageFileHeader')
 const NTHeaders=Struct.Create({
     Signature:DWORD,
-    FileHeader:ImageFileHeader
-    // TO ADD OptionalHeaders Field
+    FileHeader:ImageFileHeader,
+    arch:WORD
 })
 
 module.exports=NTHeaders

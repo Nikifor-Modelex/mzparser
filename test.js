@@ -1,12 +1,19 @@
 const {
     readFileSync
-}=require('fs')
+} = require('fs')
+const MZFile = require('./mz.js')
 
-const DOSHeader = require("./structs/DOSHeader");
-const NTHeader = require("./structs/NTHeaders");
+global.uinttobuf = (b, n, le) => {
+    var buf = Buffer.alloc(b)
+    buf[`writeUInt${b * 8}${le ? "L" : "B"}E`](n, 0)
+    return buf
+}
 
-const sample=readFileSync("./testing/sample.exe")
-var dosheader=new DOSHeader(sample,0)
-var NTHeaderOffset=dosheader.value.e_lfanew
-var ntheader=new NTHeader(sample,NTHeaderOffset)
+// Uncaught TypeError TypeError: Do not know how to serialize a BigInt
+BigInt.prototype.toJSON = function () {
+    const int = Number.parseInt(this.toString());
+    return int ?? this.toString();
+  };
+
+const mzfile=new MZFile(readFileSync("./testing/client.exe"))
 debugger
