@@ -7,6 +7,8 @@ const {
     QWORD
 } = require('../bsto/types')
 
+
+// https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-image_optional_header64
 const OptionalHeader64 = Struct.Create({
     MajorLinkerVersion: BYTE,
     MinorLinkerVersion: BYTE,
@@ -38,6 +40,7 @@ const OptionalHeader64 = Struct.Create({
     NumberOfRvaAndSizes: DWORD.LE,
 })
 
+// https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-image_nt_headers32
 const OptionalHeader32 = Struct.Create({
     MajorLinkerVersion: BYTE,
     MinorLinkerVersion: BYTE,

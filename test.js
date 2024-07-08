@@ -1,7 +1,7 @@
 const {
     readFileSync
 } = require('fs')
-const MZFile = require('./mz.js')
+const MZFile = require('./classes/MZFile.js')
 
 // useful functions for debugging
 global.uinttobuf = (b, n, le) => {

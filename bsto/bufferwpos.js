@@ -1,12 +1,9 @@
 
 class BufferWithPos extends Buffer{
-    pos=0
+    pos               // current pointer to a location in a buffer
     constructor(buf,pos=0){
         super(buf)
         this.pos=pos
-        this.other=()=>{
-            return this.subarray(this.pos)
-        }
     }
     
 }

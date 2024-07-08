@@ -1,4 +1,4 @@
-
+// I will properly comment it later
 class Struct{
     /**
      * 
@@ -20,6 +20,12 @@ class Struct{
             }
             static length=length
             static fields=fields
+            static readArray(buffer,count){
+                const arr=[]
+                for (let i = 0; i < count; i++)
+                    arr.push(new this(buffer))
+                return arr
+            }
             value={}
             length(){
                 return this.__proto__.constructor.length
@@ -37,7 +43,6 @@ class Struct{
                         }
                     }
                     else {
-                        
                         var type= new fields[field]
                         type.read(buffer)
                         this.value[field]=type.value

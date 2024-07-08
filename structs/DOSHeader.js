@@ -7,7 +7,7 @@ const{
 
 
 const DOSHeader=Struct.Create({
-    e_magic:WORD,
+    mz:WORD,
     e_cblp:WORD,
     e_cp:WORD,
     e_crlc:WORD,
